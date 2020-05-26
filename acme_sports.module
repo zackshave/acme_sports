@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements add variables to Twig template.
+ */
+function acme_sports_theme($existing, $type, $theme, $path) {
+  return [
+    'acme_sports_template' => [
+      'variables' => ['north' => NULL, 'east' => NULL, 'south' => NULL, 'west' => NULL],
+    ],
+  ];
+}

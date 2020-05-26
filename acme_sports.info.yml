@@ -1,0 +1,7 @@
+name: Acme Sports NFL Teams
+type: module
+core: '8.x'
+description: 'Displays NFL Team Data'
+package: Acme Sports
+dependencies:
+  - block

@@ -1,0 +1,5 @@
+services:
+  acme_sports_client:
+    class: Drupal\acme_sports\AcmeSportsClient
+    arguments:
+      - '@http_client_factory'

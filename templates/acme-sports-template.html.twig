@@ -1,0 +1,75 @@
+{# acme_sports/templates/acme_sports_template.html.twig #}
+{# based on /core/themes/classy/templates/block/block.html.twig #}
+{% set classes = [
+  'block',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+] %}
+
+  {# attach module libraries for custom CSS and Javascript #}
+  {{ attach_library('acme_sports/acme_sports') }}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {# output teams variables as a nested unordered list pattern #}
+  <ul class="team-divisions">
+    {% if north|length > 0 %}
+      <li class="team-division">
+        <button class="js-accordion-toggle accordion-toggle" aria-expanded="false">Northern Division</button>
+        <ul>
+          {% for team in north %}
+            <li>
+              <p>{{ team['name'] }} {{ team['nickname'] }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+
+    {% if east|length > 0 %}
+      <li class="team-division">
+        <button class="js-accordion-toggle accordion-toggle" aria-expanded="false">Eastern Division</button>
+        <ul>
+          {% for team in east %}
+            <li>
+              <p>{{ team['name'] }} {{ team['nickname'] }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+
+    {% if south|length > 0 %}
+      <li class="team-division">
+        <button class="js-accordion-toggle accordion-toggle" aria-expanded="false">Southern Division</button>
+        <ul>
+          {% for team in south %}
+            <li>
+              <p>{{ team['name'] }} {{ team['nickname'] }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+
+    {% if west|length > 0 %}
+      <li class="team-division">
+        <button class="js-accordion-toggle accordion-toggle" aria-expanded="false">Western Division</button>
+        <ul>
+          {% for team in west %}
+            <li>
+              <p>{{ team['name'] }} {{ team['nickname'] }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  </ul>
+</div>
+
+

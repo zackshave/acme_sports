@@ -1,0 +1,7 @@
+acme_sports:
+  version: 1.x
+  css:
+    theme:
+      css/acme_sports.css: {}
+  js:
+    js/acme_sports.js: {}
